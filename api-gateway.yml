@@ -1,5 +1,5 @@
 server:
-   port: 5124
+  port: 5124
 spring:
   cloud:
     gateway:
