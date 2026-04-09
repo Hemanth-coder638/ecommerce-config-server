@@ -6,7 +6,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/<your-username>/ecommerce-config-server
+          uri: https://github.com/Hemanth-coder-638/ecommerce-config-server
+          username: Hemanth-coder-638
+          password: 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
           default-label: main
 
 server:
