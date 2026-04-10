@@ -4,11 +4,6 @@ server:
 spring:
   application:
     name: api-gateway
-
-jwt:
-  secretKey: mysupersecretkeymysupersecretkey12345
-
-spring:
   cloud:
     gateway:
       routes:
@@ -44,6 +39,9 @@ spring:
                   - USER
                   - ADMIN
                   - SUPER_ADMIN
+
+jwt:
+  secretKey: mysupersecretkeymysupersecretkey12345
 
 eureka:
   client:
