@@ -25,11 +25,7 @@ spring:
         format_sql: true
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
-  health:
+    health:
     circuitbreakers:
       enabled: true
 
