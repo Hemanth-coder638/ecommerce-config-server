@@ -1,13 +1,12 @@
-spring:
-  application:
-    name: order-service
-
 server:
   servlet:
     context-path: /orders
   port: 9021
 
 spring:
+  application:
+    name: order-service
+
   datasource:
     url: jdbc:postgresql://localhost:5432/orderDB
     username: postgres
@@ -32,10 +31,12 @@ resilience4j:
       default:
         maxRetryAttempts: 3
         waitDuration: 100ms
+
     instances:
       inventoryRetry:
         baseConfig: default
         waitDuration: 200ms
+
       shippingRetry:
         baseConfig: default
         waitDuration: 200ms
@@ -57,7 +58,6 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 1s
         permittedNumberOfCallsInHalfOpenState: 3
-        eventConsumerBufferSize: 10
 
       shippingCB:
         registerHealthIndicator: true
@@ -67,4 +67,10 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 1s
         permittedNumberOfCallsInHalfOpenState: 3
-        eventConsumerBufferSize: 10
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
