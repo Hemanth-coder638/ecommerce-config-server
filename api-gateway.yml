@@ -1,5 +1,13 @@
 server:
   port: 5124
+
+spring:
+  application:
+    name: api-gateway
+
+jwt:
+  secretKey: mysupersecretkeymysupersecretkey12345
+
 spring:
   cloud:
     gateway:
@@ -10,6 +18,15 @@ spring:
             - Path=/api/v1/orders/**
           filters:
             - StripPrefix=2
+            - name: Authentication
+              args:
+                enabled: true
+            - name: Authorization
+              args:
+                allowedRoles:
+                  - USER
+                  - ADMIN
+                  - SUPER_ADMIN
 
         - id: inventory-service
           uri: lb://INVENTORY-SERVICE
@@ -18,3 +35,19 @@ spring:
           filters:
             - StripPrefix=2
             - AddRequestHeader=X-Custom-Header, Anuj
+            - name: Authentication
+              args:
+                enabled: true
+            - name: Authorization
+              args:
+                allowedRoles:
+                  - USER
+                  - ADMIN
+                  - SUPER_ADMIN
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
