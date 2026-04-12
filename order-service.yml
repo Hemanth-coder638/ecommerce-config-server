@@ -1,7 +1,7 @@
 github:
   config:
     test:
-      variable: CONFIG VALUE CHAGED TO TEST REFRESHSCOPE DEFINED IN ORDER CONTROLLER 
+      variable: 👉 CONFIG VALUE CHAGED TO TEST REFRESHSCOPE DEFINED IN ORDER CONTROLLER 👈 
 server:
   servlet:
     context-path: /orders
