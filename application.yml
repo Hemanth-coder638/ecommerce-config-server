@@ -19,10 +19,7 @@ management:
       exposure:
         include: "*"
 
-spring:
-  zipkin:
-    tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
+management.zipkin.tracing.endpoint: http://zipkin:9411/api/v2/spans
 
 logging:
   pattern:
