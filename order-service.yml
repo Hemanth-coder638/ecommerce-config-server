@@ -13,9 +13,9 @@ spring:
     name: order-service
 
   datasource:
-    url: jdbc:postgresql://${DB_SERVICE:postgres-order}:5432/$DB_NAME:orderDB}
-    username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:7878}
+    url: jdbc:postgresql://postgres-order:5432/orderDB
+    username: postgres
+    password: 7878
 
   jpa:
     hibernate:
