@@ -13,7 +13,7 @@ spring:
     name: order-service
 
   datasource:
-    url: jdbc:postgresql://postgres-order:5432/orderDB
+    url: jdbc:postgresql://localhost:5432/orderDB
     username: postgres
     password: 7878
 
