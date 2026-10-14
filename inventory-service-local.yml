@@ -16,7 +16,7 @@ management:
 
 
   datasource:
-    url: jdbc:postgresql://postgres-inventory:5432/inventoryDB
+    url: jdbc:postgresql://localhost:5432/inventoryDB
     username: postgres
     password: 7878
 
