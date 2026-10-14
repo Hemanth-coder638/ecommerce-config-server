@@ -4,13 +4,6 @@ server:
 spring:
   application:
     name: api-gateway
-management:
-  tracing:
-    sampling:
-      probability: 1.0
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411/api/v2/spans
 
   cloud:
     gateway:
@@ -48,12 +41,20 @@ management:
                   - ADMIN
                   - SUPER_ADMIN
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
 jwt:
   secretKey: mysupersecretkeymysupersecretkey12345
 
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery-service:8761/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
